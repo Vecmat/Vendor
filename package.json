@@ -1,0 +1,56 @@
+{
+    "name": "@vecmat/vendor",
+    "version": "0.0.2",
+    "description": "",
+   
+    "author": "Hanrea",
+    "license": "ISC",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts" ,
+    "exports": {
+        "require": "./dist/index.js",
+        "import": "./dist/index.mjs"
+    },
+    "scripts": {
+        "clean": "rm -rf dist",
+        "test": "yarn build:test && npx mocha test",
+        "build": "yarn clean && yarn compile && npx gulp copy",
+        "compile": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+        "deploy": "yarn build && npm publish ./dist --registry https://npm.vecmat.cc",
+        "watch": "concurrently \"tsc -w --project tsconfig.json\" \"tsc-alias -w --project tsconfig.json\""
+    },
+    "dependencies": {
+        "gd-bmp": "~2.0.1",
+        "globby": "^11.0.4",
+        "lodash": "~4.17.21",
+        "mathjs": "^11.5.0",
+        "mime": "~3.0.0",
+        "moment": "^2.29.4",
+        "murmurhash": "^2.0.1",
+        "user-agents": "~1.0.1141",
+        "uuid": "~9.0.0"
+    },
+    "devDependencies": {
+        "open": "^8.4.0",
+        "concurrently": "~7.4.0",
+        "gulp": "^4.0.2",
+        "gulp-add-src": "^1.0.0",
+        "gulp-cli": "^2.3.0",
+        "tslib": "~2.4.0",
+        "@types/node": "~18.14.6"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "test/*",
+            "docs/*"
+        ],
+        "watch": [
+            "./"
+        ],
+        "execMap": {
+            "ts": "ts-node"
+        },
+        "legacyWatch": true,
+        "delay": "1000"
+    }
+}
