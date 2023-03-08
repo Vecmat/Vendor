@@ -5,15 +5,15 @@
  */
 
 import lodash from "lodash";
-import { AnyObject } from "./base";
+import { IObjExt } from "./type";
 
 /**
  * Checks if fn is a Class
  *
- * @param {AnyObject} obj
+ * @param {IObjExt} obj
  * @returns {boolean}
  */
-export function isClass(func: AnyObject): boolean {
+export function isClass(func: IObjExt): boolean {
     return typeof func === "function" && /^class\s/.test(Function.prototype.toString.call(func));
 }
 
@@ -32,10 +32,10 @@ export function isNumberString(str: string): boolean {
  * Checks if value is a standard JSON object,
  * must be a plain object or array
  *
- * @param {AnyObject} value
+ * @param {IObjExt} value
  * @returns {*}  {boolean}
  */
-export function isJSONObj(value: AnyObject): boolean {
+export function isJSONObj(value: IObjExt): boolean {
     return lodash.isPlainObject(value) || lodash.isArray(value);
 }
 

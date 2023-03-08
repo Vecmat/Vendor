@@ -6,6 +6,7 @@
         "outDir": "./dist",
         "target": "ES2017",
         "module": "commonjs",
+        "types": ["node"],
         "allowJs": true,
         "sourceMap": true,
         "declaration": true,

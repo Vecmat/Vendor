@@ -4,7 +4,8 @@
  * @ copyright: Vecmat (c) - <hi(at)vecmat.com>
  */
 import lodash from "lodash";
-import { AnyObject } from "./base";
+import { IObjExt } from "./type";
+
 
 /**
  * Determines whether value is an element of array arr,
@@ -39,9 +40,9 @@ export function arrRemove(arr: any[], index: number): any[] {
 /**
  * The object obj prototype instance conversion to organize the data structure stored in the object,
  * access to this object in the v8 engine will be faster
- * @param {AnyObject} obj
+ * @param {IObjExt} obj
  */
-export function toFastProperties(obj: AnyObject) {
+export function toFastProperties(obj: IObjExt) {
     // eslint-disable-next-line no-empty-function
     const f: any = function f() {};
     f.prototype = obj;
@@ -52,11 +53,11 @@ export function toFastProperties(obj: AnyObject) {
 /**
  * Copy the source, deep deep to true depth copy
  *
- * @param {AnyObject} source
+ * @param {IObjExt} source
  * @param {boolean} [deep=false]
- * @returns {*} {AnyObject}
+ * @returns {*} {IObjExt}
  */
-export function clone(source: AnyObject, deep = false): AnyObject {
+export function clone(source: IObjExt, deep = false): IObjExt {
     if (deep) return lodash.cloneDeep(source);
     else return lodash.clone(source);
 }
@@ -65,12 +66,12 @@ export function clone(source: AnyObject, deep = false): AnyObject {
  * So that the target object inherits the source,
  * deep depth is true depth inheritance
  *
- * @param {AnyObject} source
- * @param {AnyObject} target
+ * @param {IObjExt} source
+ * @param {IObjExt} target
  * @param {boolean} [deep=false]
- * @returns {*}  {AnyObject}
+ * @returns {*}  {IObjExt}
  */
-export function extend(source: AnyObject, target: AnyObject, deep = false): AnyObject {
+export function extendObj(source: IObjExt, target: IObjExt, deep = false): IObjExt {
     if (deep) return lodash.merge(lodash.cloneDeep(source), target);
     else return lodash.assignIn(source, target);
 }
@@ -79,11 +80,11 @@ export function extend(source: AnyObject, target: AnyObject, deep = false): AnyO
  * Short for hasOwnProperty
  *
  * @export
- * @param {AnyObject} obj
+ * @param {IObjExt} obj
  * @param {string} property
  * @returns {*}  {boolean}
  */
-export function hasOwn(obj: AnyObject, property: string) {
+export function hasOwn(obj: IObjExt, property: string) {
     return Object.prototype.hasOwnProperty.call(obj, property);
 }
 
@@ -91,13 +92,13 @@ export function hasOwn(obj: AnyObject, property: string) {
  * Short for Object.defineProperty,
  * the property is getter when setter is false
  *
- * @param {AnyObject} obj
+ * @param {IObjExt} obj
  * @param {string} property
  * @param {*} value
  * @param {boolean} [setter=false]
  * @returns {*}
  */
-export function define(obj: AnyObject, property: string, value: any, setter = false) {
+export function defineProp(obj: IObjExt, property: string, value: any, setter = false) {
     if (setter) {
         Object.defineProperty(obj, property, {
             value,

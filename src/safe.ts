@@ -10,7 +10,7 @@
 // 单个字符的比较是很快的，攻击者可以细化测量时间精度到微秒，
 // 通过响应时间的差异推算出是从哪一个字符开始错误，快速破解
 
-import { createHash } from "crypto";
+import { createHash } from "node:crypto";
 // 安全比对密码
 // https://www.npmjs.com/package/secure-compare
 export const verifyPass = (pass: string, salt: string, check: string): boolean => {
