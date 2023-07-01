@@ -1,6 +1,6 @@
 {
     "name": "@vecmat/vendor",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "",
     "author": "Hanrea",
     "license": "ISC",
@@ -23,7 +23,8 @@
         "mathjs": "^11.5.0",
         "moment": "^2.29.4",
         "murmurhash": "^2.0.1",
-        "uuid": "~9.0.0"
+        "uuid": "~9.0.0",
+        "@types/lodash": "~4.14.195"
     },
     "devDependencies": {
         "@types/node": "~18.14.6",

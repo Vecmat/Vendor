@@ -16,10 +16,10 @@
         "noImplicitAny": false,
         "esModuleInterop": true,
         "moduleResolution": "node",
-        "typeRoots": ["./typings"],
         "preserveConstEnums": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "typeRoots": ["./typings/*", "node_modules/@types"],
         "lib": [
             "es6",
             "dom",
