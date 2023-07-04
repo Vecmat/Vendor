@@ -1,6 +1,6 @@
 {
     "name": "@vecmat/vendor",
-    "version": "0.0.3",
+    "version": "0.0.1",
     "description": "",
     "author": "Hanrea",
     "license": "ISC",
@@ -19,20 +19,20 @@
         "watch": "concurrently \"tsc -w --project tsconfig.json\" \"tsc-alias -w --project tsconfig.json\""
     },
     "dependencies": {
+        "uuid": "^9.x.x",
+        "tslib": "^2.4.1",
         "lodash": "~4.17.21",
         "mathjs": "^11.5.0",
         "moment": "^2.29.4",
         "murmurhash": "^2.0.1",
-        "uuid": "~9.0.0",
+        "concurrently": "~8.0.1",
         "@types/lodash": "~4.14.195"
     },
     "devDependencies": {
-        "@types/node": "~18.14.6",
-        "concurrently": "~7.4.0",
+        "@types/node": "^18.x.x",
         "gulp": "^4.0.2",
         "gulp-add-src": "^1.0.0",
         "gulp-cli": "^2.3.0",
-        "tslib": "~2.4.0",
         "typescript": "~4.9.5",
         "tsc-alias": "~1.8.2"
     },
