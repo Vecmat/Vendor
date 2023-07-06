@@ -15,7 +15,7 @@ gulp.task( "copy", () => {
     return gulp.src( "./README.MD" )
         .pipe( gulp.dest( destination ) )
         .pipe( addSrc( [
-            ".npmrc",
+            "tsconfig.json",
             ".npmignore",
             "./package.json"
         ] ) )

@@ -1,14 +1,15 @@
 {
     "name": "@vecmat/vendor",
-    "version": "0.0.1",
+    "version": "0.0.11",
     "description": "",
     "author": "Hanrea",
     "license": "ISC",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        "require": "./dist/index.js",
-        "import": "./dist/index.mjs"
+    "main": "./src/index.ts",
+    "types": "./src/index.ts",
+    "publishConfig": {
+        "access": "public",
+        "main": "./index.js",
+        "types": "./index.d.ts"
     },
     "scripts": {
         "clean": "rm -rf dist",
@@ -21,12 +22,13 @@
     "dependencies": {
         "uuid": "^9.x.x",
         "tslib": "^2.4.1",
-        "lodash": "~4.17.21",
+        "lodash": "^4.17.21",
         "mathjs": "^11.5.0",
         "moment": "^2.29.4",
         "murmurhash": "^2.0.1",
         "concurrently": "~8.0.1",
-        "@types/lodash": "~4.14.195"
+        "@types/lodash": "^4.14.195",
+        "@types/uuid": "8.3.4"
     },
     "devDependencies": {
         "@types/node": "^18.x.x",

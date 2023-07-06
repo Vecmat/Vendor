@@ -12,13 +12,14 @@
  * @example Templating('Hi ${person.info.name})', {"person":{"info":{"name":"test"}}}, "--")
  * @returns
  */
-export function Templating(template: string, map: object, fallback?: string) {
+// https://github.com/Jinntec/Fore/blob/9823dbc49fe0e5b2f736726d4d8742e5329521f9/src/actions/StringTpl.js#L9
+export function Templating(template: string, map: any, fallback?: string) {
     return template.replace(/\$\{[^}]+\}/g, match =>
         match
             .slice(2, -1)
             .trim()
             .split(".")
-            .reduce((search, key) => search[key] || fallback || match, map)
+            .reduce((pre: any, cur: string, idx: number, keys: string[]) => pre[cur] || fallback || match, map)
     );
 }
 
