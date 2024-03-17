@@ -125,7 +125,7 @@ function preserveCamelCase(str: string) {
     let isLastLastCharUpper = false;
 
     for (let i = 0; i < str.length; i++) {
-        const character = str[i];
+        const character = str[i]||"";
 
         if (isLastCharLower && /[a-zA-Z]/.test(character) && character.toUpperCase() === character) {
             str = `${str.slice(0, i)}-${str.slice(i)}`;

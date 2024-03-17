@@ -22,7 +22,7 @@ export const Hexstring2btye = (str: string) => {
 export const Bytes2HexString = (b: Buffer) => {
     let hexs = "";
     for (let i = 0; i < b.length; i++) {
-        let hex = b[i].toString(16);
+        let hex = b[i]!.toString(16);
         if (hex.length === 1) {
             hex = "0" + hex;
         }

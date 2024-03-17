@@ -4,7 +4,7 @@
  * @ copyright: Vecmat (c) - <hi(at)vecmat.com>
  */
 import lodash from "lodash";
-import { IObjExt } from "./type";
+import { IObjExt } from "./type.js";
 
 
 /**

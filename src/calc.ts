@@ -3,7 +3,7 @@
  * @ version: 2023-03-06 13:14:21
  * @ copyright: Vecmat (c) - <hi(at)vecmat.com>
  */
-import mathjs from "mathjs";
+import * as mathjs from "mathjs";
 
 /**
  * Check whether the number is out of range, and give a prompt if it is out of range

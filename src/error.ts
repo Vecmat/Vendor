@@ -3,7 +3,7 @@
  * @ version: 2023-03-06 13:14:21
  * @ copyright: Vecmat (c) - <hi(at)vecmat.com>
  */
-import { Templating } from "./str";
+import { Templating } from "./str.js";
 
 /**
  * 错误处理
@@ -68,14 +68,14 @@ export class Exception extends BaseError {
     public sign: string;
     public temp: string;
     public name: string;
-    public message: string;
+    public message!: string;
     // 扩展
     public info: object;
     public secret: object;
 
     // 扩展参数
-    public func: string;
-    public line: string;
+    public func!: string
+    public line!: string
     // 内部方法
     public isException = true;
     // 扩展Error ，info 将会返回到客户端

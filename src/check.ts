@@ -5,7 +5,7 @@
  */
 
 import lodash from "lodash";
-import { IObjExt } from "./type";
+import { IObjExt } from "./type.js";
 
 /**
  * Checks if fn is a Class

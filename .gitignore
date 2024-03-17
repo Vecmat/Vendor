@@ -1,7 +1,8 @@
 
 # 子目录复制
 wait/
-dist/
+lib/
+libs/
 .rush/temp/
 # Logs
 *.log
