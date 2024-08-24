@@ -1,13 +1,13 @@
 {
     "name": "@vecmat/vendor",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "",
     "author": "Hanrea",
     "license": "ISC",
     "type": "module",
-    "main": "./libs/index.cjs",
-    "module": "./libs/index.js",
-    "types": "./libs/index.d.ts",
+    "main": "./libs/cjs/index.cjs",
+    "module": "./libs/esm/index.mjs",
+    "types": "./libs/types/index.d.ts",
     "scripts": {
         "clean": "rm -rf dist",
         "preinstall": "npx only-allow pnpm",
@@ -57,7 +57,6 @@
         "@silverhand/ts-config": "^5.0.0",
         "@silverhand/eslint-config": "^5.0.0",
         "rollup": "~4.13.0",
-
         "rollup-plugin-summary": "~2.0.0",
         "@rollup/plugin-typescript": "11.1.0",
         "@rollup/plugin-node-resolve": "^15.0.2",
